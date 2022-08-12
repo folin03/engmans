@@ -6,6 +6,7 @@ const Clients: CollectionConfig = {
     useAsTitle: 'firstName',
     disableDuplicate: true,
     defaultColumns: [
+      'companyName',
       'firstName',
       'lastName',
       'phoneNumber',
@@ -16,6 +17,10 @@ const Clients: CollectionConfig = {
     read: () => true,
   },
   fields: [
+    {
+      name: 'companyName',
+      type: 'text',
+    },
     {
       name: 'title',
       type: 'select',
@@ -39,10 +44,6 @@ const Clients: CollectionConfig = {
       ]
     },
     {
-      name: 'companyName',
-      type: 'text',
-    },
-    {
       name: 'firstName',
       type: 'text',
       required: true
@@ -54,7 +55,7 @@ const Clients: CollectionConfig = {
     },
     {
       name: 'email',
-      type: 'text',
+      type: 'email',
       required: true
     },
     {
@@ -63,9 +64,36 @@ const Clients: CollectionConfig = {
       required: true
     },
     {
-      name: 'notes',
-      type: 'textarea',
-    },
+      name: 'notes', // required
+      type: 'array', // required
+      minRows: 0,
+      maxRows: 1000,
+      fields: [ // required
+        {
+          name: 'dateCreated',
+          type: 'date',
+          required: true,
+        },
+        {
+          name: 'createdBy',
+          type: 'text',
+          required: true
+        },
+        {
+          name: 'dateLastEdit',
+          type: 'date',
+        },
+        {
+          name: 'editedBy',
+          type: 'text',
+        },
+        {
+          name: 'note',
+          type: 'textarea',
+          required: true
+        }
+      ]
+    }
   ],
 };
 
