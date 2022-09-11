@@ -118,7 +118,7 @@ const Sites: CollectionConfig = {
       maxRows: 1000,
       fields: [ // required
         {
-          name: 'dateCreated',
+          name: 'created',
           type: 'date',
           required: true,
         },
@@ -128,7 +128,7 @@ const Sites: CollectionConfig = {
           required: true
         },
         {
-          name: 'dateLastEdit',
+          name: 'lastEdit',
           type: 'date',
         },
         {

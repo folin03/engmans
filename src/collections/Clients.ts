@@ -70,7 +70,7 @@ const Clients: CollectionConfig = {
       maxRows: 1000,
       fields: [ // required
         {
-          name: 'dateCreated',
+          name: 'created',
           type: 'date',
           required: true,
         },
@@ -80,7 +80,7 @@ const Clients: CollectionConfig = {
           required: true
         },
         {
-          name: 'dateLastEdit',
+          name: 'lastEdited',
           type: 'date',
         },
         {
